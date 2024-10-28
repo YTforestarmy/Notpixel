@@ -2,9 +2,9 @@
 
 NotPixel Bot is a fully automated tool for claiming and coloring pixels. With built-in anti-detection features, this bot operates efficiently and stealthily to deliver the best results. Simplify your tasks with NotPixel Bot!
 
-BOT GROUP LINK: https://t.me/notpixel/app?startapp=f5373988314_s4
+BOT GROUP LINK: [Link Bot](https://t.me/notpixel/app?startapp=f5373988314)
 
-TELEGRAM GROUP LINK: https://t.me/UxScript
+TELEGRAM GROUP LINK: [Link Channel Telegram](https://t.me/UxScript)
 
 ## Features:
 - Automatic Boosting (Latest Update)
