@@ -88,27 +88,27 @@ class Tapper:
 
     def info(self, message):
         from bot.utils import info
-        info(f"<light-yellow>{self.session_name}</light-yellow>{message}")
+        info(f"<light-yellow>{self.session_name} | </light-yellow>{message}")
 
     def debug(self, message):
         from bot.utils import debug
-        debug(f"<light-yellow>{self.session_name}</light-yellow>{message}")
+        debug(f"<light-yellow>{self.session_name} | </light-yellow>{message}")
 
     def warning(self, message):
         from bot.utils import warning
-        warning(f"<light-yellow>{self.session_name}</light-yellow>{message}")
+        warning(f"<light-yellow>{self.session_name} | </light-yellow>{message}")
 
     def error(self, message):
         from bot.utils import error
-        error(f"<light-yellow>{self.session_name}</light-yellow>{message}")
+        error(f"<light-yellow>{self.session_name} | </light-yellow>{message}")
 
     def critical(self, message):
         from bot.utils import critical
-        critical(f"<light-yellow>{self.session_name}</light-yellow>{message}")
+        critical(f"<light-yellow>{self.session_name} | </light-yellow>{message}")
 
     def success(self, message):
         from bot.utils import success
-        success(f"<light-yellow>{self.session_name}</light-yellow>{message}")
+        success(f"<light-yellow>{self.session_name} | </light-yellow>{message}")
 
     def save_user_agent(self):
         user_agents_file_name = "user_agents.json"
@@ -512,7 +512,7 @@ class Tapper:
             if draw_request.status == 200:
                 data = await draw_request.json()
 
-                self.success(f"<cyan>[PUMPKINS MODE]</cyan> Painted (X: <cyan>{x}</cyan>, Y: <cyan>{y}</cyan>)")
+                self.success(f"<cyan>[PUMPKINS MODE]</cyan> Painted")
                 return True
             else:
                 return False
@@ -527,9 +527,9 @@ class Tapper:
             self.current_user_balance = new_balance
 
             if template_id:
-                self.success(f"<cyan>[{self.mode}]</cyan> Painted (X: <cyan>{x}</cyan>, Y: <cyan>{y}</cyan>) with color <light-blue>{color}</light-blue> | Balance <light-green>{'{:,.3f}'.format(self.current_user_balance)}</light-green> <magenta>(+{added_points} pix)</magenta> | Template <cyan>{template_id}</cyan>")
+                self.success(f"<cyan>[{self.mode}]</cyan> Painted with color <light-blue>{color}</light-blue> | <cyan>+{added_points} PX</cyan> | Template <cyan>{template_id}</cyan>")
             else:
-                self.success(f"<cyan>[{self.mode}]</cyan> Painted (X: <cyan>{x}</cyan>, Y: <cyan>{y}</cyan>) with color <light-blue>{color}</light-blue> | Balance <light-green>{'{:,.3f}'.format(self.current_user_balance)}</light-green> <magenta>(+{added_points} pix)</magenta>")
+                self.success(f"<cyan>[{self.mode}]</cyan> Painted with color <light-blue>{color}</light-blue> | <cyan>+{added_points} PX</cyan>")
             return None
 
     def check_timeout_error(self, error):

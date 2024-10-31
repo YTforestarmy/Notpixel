@@ -6,9 +6,9 @@ from loguru import logger
 from pyrogram.raw.functions.messages import RequestAppWebView
 
 logger.remove()
-logger.add(sink=sys.stdout, format="<white>[⚔ NOTPIXEL]</white>"
+logger.add(sink=sys.stdout, format="<white>[⚔]</white>"
                                    " ║ <level>{level}</level>"
-                                   " | <white><b>{message}</b></white>")
+                                   " ║ <white><b>{message}</b></white>")
 logger = logger.opt(colors=True)
 
 

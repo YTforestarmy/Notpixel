@@ -24,7 +24,7 @@ class Settings(BaseSettings):
 
     ENABLE_AUTO_JOIN_TO_SQUAD_CHANNEL: bool = False
     ENABLE_AUTO_JOIN_TO_SQUAD: bool = True
-    SQUAD_SLUG: str = "isb_dev"
+    SQUAD_SLUG: str = "ISB_Dev"
 
     DISABLE_IN_NIGHT: bool = False
     NIGHT_TIME: list[int] = [23, 6]
