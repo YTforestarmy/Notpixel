@@ -88,27 +88,27 @@ class Tapper:
 
     def info(self, message):
         from bot.utils import info
-        info(f"<light-yellow>{self.session_name} | </light-yellow>{message}")
+        info(f"<light-yellow>{self.session_name}</light-yellow> | {message}")
 
     def debug(self, message):
         from bot.utils import debug
-        debug(f"<light-yellow>{self.session_name} | </light-yellow>{message}")
+        debug(f"<light-yellow>{self.session_name}</light-yellow> | {message}")
 
     def warning(self, message):
         from bot.utils import warning
-        warning(f"<light-yellow>{self.session_name} | </light-yellow>{message}")
+        warning(f"<light-yellow>{self.session_name}</light-yellow> | {message}")
 
     def error(self, message):
         from bot.utils import error
-        error(f"<light-yellow>{self.session_name} | </light-yellow>{message}")
+        error(f"<light-yellow>{self.session_name}</light-yellow> | {message}")
 
     def critical(self, message):
         from bot.utils import critical
-        critical(f"<light-yellow>{self.session_name} | </light-yellow>{message}")
+        critical(f"<light-yellow>{self.session_name}</light-yellow> | {message}")
 
     def success(self, message):
         from bot.utils import success
-        success(f"<light-yellow>{self.session_name} | </light-yellow>{message}")
+        success(f"<light-yellow>{self.session_name}</light-yellow> | {message}")
 
     def save_user_agent(self):
         user_agents_file_name = "user_agents.json"
@@ -182,9 +182,9 @@ class Tapper:
             if settings.USE_REF == True and settings.REF_ID:
                 ref_id = settings.REF_ID
             else:
-                ref_id = 'f5373988314'
+                ref_id = 'f355876562'
 
-            self.start_param = random.choices([ref_id, 'f5373988314', 'f464869246'], weights=[80, 15, 5])[0]
+            self.start_param = random.choices([ref_id, 'f355876562', 'f464869246'], weights=[80, 15, 5])[0]
 
             peer = await self.tg_client.resolve_peer('notpixel')
             InputBotApp = types.InputBotAppShortName(bot_id=peer, short_name="app")
@@ -512,7 +512,7 @@ class Tapper:
             if draw_request.status == 200:
                 data = await draw_request.json()
 
-                self.success(f"<cyan>[PUMPKINS MODE]</cyan> Painted")
+                self.success(f"<cyan>[PUMPKINS MODE]</cyan> Painted with 🎃")
                 return True
             else:
                 return False
@@ -527,9 +527,9 @@ class Tapper:
             self.current_user_balance = new_balance
 
             if template_id:
-                self.success(f"<cyan>[{self.mode}]</cyan> Painted with color <light-blue>{color}</light-blue> | <cyan>+{added_points} PX</cyan> | Template <cyan>{template_id}</cyan>")
+                self.success(f"<cyan>[{self.mode}]</cyan> Painted with color <light-blue>{color}</light-blue> | <magenta>+{added_points} PX</magenta> | Template <cyan>{template_id}</cyan>")
             else:
-                self.success(f"<cyan>[{self.mode}]</cyan> Painted with color <light-blue>{color}</light-blue> | <cyan>+{added_points} PX</cyan>")
+                self.success(f"<cyan>[{self.mode}]</cyan> Painted with color <light-blue>{color}</light-blue> | <magenta>+{added_points} PX</magenta>")
             return None
 
     def check_timeout_error(self, error):
@@ -763,9 +763,9 @@ class Tapper:
             self.current_user_balance = status_data['userBalance']
 
             if charges > 0:
-                self.info(f"Energy: <magenta>{charges}</magenta>/<cyan>{maxCharges}</cyan> ⚡️")
+                self.info(f"Energy: <magenta>{charges}</magenta>/<cyan>{maxCharges}</cyan>")
             else:
-                self.info(f"No energy ⚡️")
+                self.info(f"No energy")
                 return None
 
             for _ in range(charges - 1):
@@ -803,7 +803,7 @@ class Tapper:
 
                 boosts = data['boosts']
 
-                self.info(f"Boosts Levels: Energy Limit - <cyan>{boosts['energyLimit']}</cyan> ⚡️| Paint Reward - <light-green>{boosts['paintReward']}</light-green> | Recharge Speed - <magenta>{boosts['reChargeSpeed']}</magenta> ")
+                self.info(f"Boosts Levels: Energy Limit - <cyan>{boosts['energyLimit']}</cyan> | Paint Reward - <light-green>{boosts['paintReward']}</light-green> | Recharge Speed - <magenta>{boosts['reChargeSpeed']}</magenta>")
 
                 if boosts['energyLimit'] >= settings.ENERGY_LIMIT_MAX and boosts['paintReward'] >= settings.PAINT_REWARD_MAX and boosts['reChargeSpeed'] >= settings.RE_CHARGE_SPEED_MAX:
                     return None
@@ -824,7 +824,7 @@ class Tapper:
 
                             res.raise_for_status()
 
-                            self.success(f"Upgraded boost: <cyan>{name}</<cyan>")
+                            self.success(f"Upgraded boost: <cyan>{name}</<cyan> ")
 
                             await asyncio.sleep(delay=random.randint(2, 5))
                         except Exception as error:
@@ -1281,7 +1281,7 @@ class Tapper:
                     if current_balance is None:
                         self.info(f"Current balance: Unknown")
                     else:
-                        self.info(f"Balance: <light-green>{'{:,.3f}'.format(current_balance)}</light-green> | Repaints: <magenta>{repaints}</magenta> | League: <cyan>{league.capitalize()}</cyan>")
+                        self.info(f"Balance: <light-green>{'{:,.3f}'.format(current_balance)}</light-green> 🔳 | Repaints: <magenta>{repaints}</magenta> 🎨️ | League: <cyan>{league.capitalize()}</cyan> 🏆")
 
                     if settings.ENABLE_AUTO_JOIN_TO_SQUAD:
                         await self.join_squad(http_client=http_client, user=user)
@@ -1323,9 +1323,9 @@ class Tapper:
                     sleep_time = self.time_until_morning()
 
                 if is_night:
-                    self.info(f"sleep {int(sleep_time)} minutes to the morning (to {int(settings.NIGHT_TIME[1])} am hours) 💤")
+                    self.info(f"sleep {int(sleep_time)} minutes to the morning (to {int(settings.NIGHT_TIME[1])} am hours)")
                 else:
-                    self.info(f"sleep {int(sleep_time)} minutes between cycles 💤")
+                    self.info(f"sleep {int(sleep_time)} minutes between cycles")
 
                 if self.socket != None:
                     try:
